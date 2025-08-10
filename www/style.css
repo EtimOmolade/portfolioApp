@@ -30,6 +30,7 @@ section {
   padding: 4rem 1rem;
   max-width: 960px;
   margin: 0 auto;
+  height: 100vh;
 }
 
 a {
@@ -131,7 +132,7 @@ header #logo, header div{
 /* ===== About Section ===== */
 
 #about {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

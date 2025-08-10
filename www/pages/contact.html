@@ -6,13 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacts</title>
   <link rel="stylesheet" href="../style.css">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({
+        publicKey: "8Ib0r68AWkl86IgO-",
+      });
+    })();
+
+    window.onload = function () {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        emailjs.sendForm('contact_service', 'template_n7yxqkr', this)
+          .then(() => {
+            alert('Message sent successfully!');
+            this.reset();
+          }, (error) => {
+            alert('Message failed to send. Please try again.');
+            console.error('FAILED...', error);
+          });
+      });
+    }
+  </script>
 </head>
 
 <body>
   <header id="home">
-    <!-- Logo/Icon  -->
     <div>
-
       <button onclick="sayHello()">EO</button>
     </div>
 
@@ -26,46 +49,49 @@
       </ul>
     </nav>
   </header>
+
   <section id="contact">
     <h2>Contact</h2>
-    <p>
-      Email:
+    <p>Email:
       <a href="mailto:etim.omolade@example.com">etimanthoniaomolade17@gmail.com</a>
     </p>
-    <p>Phone: <a href="tel:+2347036875750"> +234-703-6875-750</a></p>
+    <p>Phone: <a href="tel:+2347036875750">+234-703-6875-750</a></p>
     <div class="socials">
       <a href="https://github.com/EtimOmolade">GitHub</a> |
       <a href="https://www.linkedin.com/in/etim-omolade-1134a5212/">LinkedIn</a> |
       <a href="https://x.com/adelaideetim?s=21">Twitter</a>
     </div>
 
-    <!-- contact-form-section -->
     <div class="contact-form">
       <h3>Contact Me</h3>
-      <form>
+      <form id="contact-form">
+        <input type="hidden" name="time" value="">
+
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your Name">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="replyto" placeholder="Your Email">
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="title">Subject:</label>
+        <input type="text" id="title" name="title" placeholder="Subject" required>
 
         <label for="message">Message:</label>
-        <input textarea="text" id="message" message="message" placeholder="Write your message">
+        <textarea id="message" name="message" placeholder="Write your message" required></textarea>
 
         <button type="submit">Send Message</button>
       </form>
     </div>
-
-
-
   </section>
-  </main>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 Etim Omolade. Built with ❤️ using HTML, CSS & JavaScript.</p>
     <a href="#home">Back to Top</a>
   </footer>
+
+  <script>
+    document.querySelector('input[name="time"]').value = new Date().toLocaleString();
+  </script>
 </body>
 
 </html>
