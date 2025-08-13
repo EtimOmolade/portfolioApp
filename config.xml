@@ -8,4 +8,10 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <platform name="android">
+        <config-file parent="/*" target="AndroidManifest.xml">
+        </config-file>
+    </platform>
+    <plugin name="cordova-plugin-device" spec="^3.0.0" />
+    <plugin name="cordova-plugin-android-permissions" spec="^1.1.5" />
 </widget>

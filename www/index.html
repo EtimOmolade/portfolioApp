@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Personal Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="interviewTask.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="cordova.js"></script>
+  <script src="app.js"></script>
 </head>
-
 <body>
   <header id="home">
-    <!-- Logo/Icon  -->
     <div id="logo">
-
-      <p onclick="sayHello()">EO</p>
+      <p onclick="console.log('Logo click')">EO</p>
     </div>
-
     <nav>
       <ul class="nav-links">
         <li><a href="pages/about.html">About</a></li>
@@ -29,24 +25,19 @@
       </ul>
     </nav>
   </header>
-
-
-
-  <!-- main-section -->
   <section id="main">
     <h1>Welcome To My World</h1>
     <h1>ETIM ANTHONIA OMOLADE</h1>
     <p class="about-me">I build user-friendly mobile and web apps</p>
-    <a href="../www/pages/projects.html" class="work-btn">See my work</a>
+    <a href="pages/projects.html" class="work-btn">See my work</a>
+    <div class="device-info-section">
+      <button id="deviceButton" onclick="console.log('Direct HTML device button click')">Show Device Info</button>
+      <div id="deviceInfo" style="margin-top: 20px; font-family: Poppins, sans-serif; color: #333;"></div>
+    </div>
   </section>
-
-  <!-- Footer -->
   <footer>
     <p>© 2025 Etim Omolade. Built with ❤️ using HTML, CSS & JavaScript.</p>
     <a href="#home">Back to Top</a>
   </footer>
-
-  <script src="app.js"></script>
 </body>
-
 </html>

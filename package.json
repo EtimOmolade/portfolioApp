@@ -17,17 +17,25 @@
       "android"
     ],
     "plugins": {
+      "cordova-plugin-device": {},
+      "cordova-plugin-android-permissions": {},
       "cordova-plugin-camera": {
         "ANDROIDX_CORE_VERSION": "1.6.+"
       },
+      "call-number": {},
       "cordova-plugin-geolocation": {
         "GPS_REQUIRED": "true"
       }
     }
   },
   "devDependencies": {
+    "call-number": "github:Rohfosho/CordovaCallNumberPlugin",
     "cordova-android": "^14.0.1",
-    "cordova-plugin-camera": "^8.0.0",
+    "cordova-plugin-android-permissions": "^1.1.5",
+    "cordova-plugin-device": "^3.0.0",
     "cordova-plugin-geolocation": "^5.0.0"
+  },
+  "dependencies": {
+    "cordova-plugin-camera": "^7.0.0"
   }
 }

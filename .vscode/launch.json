@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "cordova",
+      "request": "launch",
+      "name": "Launch Cordova Android",
+      "platform": "android",
+      "target": "emulator",
+      "port": 9222,
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}",
+      "appSrc": "www"
+    }
+  ]
+}

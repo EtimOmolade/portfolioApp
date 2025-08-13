@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacts</title>
   <link rel="stylesheet" href="../style.css">
-
+  <script src="../cordova.js"></script>
+  <script src="../js/contact.js"></script>
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
@@ -36,7 +37,7 @@
 <body>
   <header id="home">
     <div>
-      <button onclick="sayHello()">EO</button>
+      <p onclick="sayHello()">EO</p>
     </div>
 
     <nav>
@@ -82,6 +83,22 @@
         <button type="submit">Send Message</button>
       </form>
     </div>
+    <hr />
+
+
+  <div>
+    <button id="callButton" onclick="console.log('Direct HTML Call click registered')">Call Me</button>
+  </div>
+
+    <hr />
+  <p>
+    Why not play around with the camera below?
+  </p>
+  <div>
+    <button id="cameraButton" onclick="console.log('Direct HTML Camera click registered')">Open Camera</button>
+    <img id="photoPreview" src="" alt="Your Photo" width="200">
+  </div>
+
   </section>
 
   <footer>
